@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Setup</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Let's Get Started</h2>
+        <p>Customize your profile before you continue</p>
+
+        <form id="profileForm">
+            <input type="text" id="fullName" placeholder="Full Name" required>
+            <input type="text" id="bio" placeholder="Short Bio" required>
+            <input type="text" id="skills" placeholder="Skills (comma-separated)" required>
+            <button type="submit">Save & Continue</button>
+        </form>
+
+        <p id="message"></p>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+    <script src="../assets/js/firebase-config.js"></script>
+    <script src="../assets/js/profile-setup.js"></script>
+</body>
+</html>
