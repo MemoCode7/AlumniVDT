@@ -4,54 +4,59 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard | AlumniHub</title>
-    <link rel="stylesheet" href="assets/css/dashboard.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
-<body>
-    <header>
-        <h1>Alumni Hub Dashboard</h1>
-        <nav> <h2>AlumniHub</h2> <button onclick="logout()">Logout</button> </nav>
-    </header>
+<body class="bg-light">
 
-    <div class="container">
-        <!-- User Profile Section -->
-        <section id="userProfile">
-            <h2>Welcome, <span id="user-email"></span></h2>
-            <p id="userBio">Bio: Loading...</p>
-            <p>Skills: <span id="userSkills">Loading...</span></p>
-            <a href="profile-setup.html">Edit Profile</a>
-        </section>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="#">AlumniHub</a>
+            <button class="btn btn-danger" onclick="logout()">Logout</button>
+        </div>
+    </nav>
 
-        <!-- Navigation Menu -->
-        <nav>
-            <ul>
-                <li><a href="#">Find Alumni</a></li>
-                <li><a href="#">Mentorship</a></li>
-                <li><a href="#">Jobs</a></li>
-                <li><a href="#">Events</a></li>
-                <li><a href="#">Discussion Board</a></li>
-            </ul>
-        </nav>
+    <div class="container mt-4">
+        <div class="row">
+            <!-- Left Sidebar (Profile & Navigation) -->
+            <div class="col-md-3">
+                <div class="card p-3">
+                    <h4>Welcome, <span id="user-email">Loading...</span></h4>
+                    <p id="userBio">Bio: Loading...</p>
+                    <p>Skills: <span id="userSkills">Loading...</span></p>
+                    <a href="profile-setup.html" class="btn btn-primary w-100">Edit Profile</a>
+                </div>
 
-        <!-- Recommended Jobs & Events -->
-        <section id="recommendations">
-            <h2>Recommended for You</h2>
-            <div id="jobList">Loading...</div>
-            <div id="eventList">Loading...</div>
-        </section>
+                <ul class="list-group mt-3">
+                    <li class="list-group-item"><a href="#">Find Alumni</a></li>
+                    <li class="list-group-item"><a href="#">Mentorship</a></li>
+                    <li class="list-group-item"><a href="#">Jobs</a></li>
+                    <li class="list-group-item"><a href="#">Events</a></li>
+                    <li class="list-group-item"><a href="#">Discussion Board</a></li>
+                </ul>
+            </div>
 
-        <!-- Followed Alumni & Notifications -->
-        <section id="followedAlumni">
-            <h2>Followed Alumni</h2>
-            <ul id="alumniList">Loading...</ul>
-        </section>
+            <!-- Main Content (Jobs, Events, Discussion Board) -->
+            <div class="col-md-9">
+                <div class="card p-3 mb-3">
+                    <h4>Recommended for You</h4>
+                    <div id="jobList">Loading...</div>
+                    <div id="eventList">Loading...</div>
+                </div>
 
-        <!-- Discussion Board -->
-        <section id="discussionBoard">
-            <h2>Discussion Board</h2>
-            <textarea id="chatMessage" placeholder="Type a message..."></textarea>
-            <button id="sendMessage">Send</button>
-            <ul id="messagesList">Loading...</ul>
-        </section>
+                <div class="card p-3 mb-3">
+                    <h4>Followed Alumni</h4>
+                    <ul id="alumniList" class="list-group">Loading...</ul>
+                </div>
+
+                <div class="card p-3">
+                    <h4>Discussion Board</h4>
+                    <textarea id="chatMessage" class="form-control" placeholder="Type a message..."></textarea>
+                    <button id="sendMessage" class="btn btn-primary mt-2">Send</button>
+                    <ul id="messagesList" class="list-group mt-2">Loading...</ul>
+                </div>
+            </div>
+        </div>
     </div>
 
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
@@ -59,5 +64,6 @@
     <script src="assets/js/firebase-config.js"></script>
     <script src="assets/js/auth.js"></script>
     <script src="assets/js/dashboard.js"></script>
+
 </body>
 </html>
